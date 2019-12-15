@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nom!</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="/assets/js/burgers.js"></script>
+</head>
+<body>
+    <h1>Eat The Burger</h1>
+    <h2>Fresh!</h2>
+    <ul id="freshBurgers"></ul>
+
+    
+    <h2>Eaten</h2>
+    <ul id="eatenBurgers"></ul>
+
+    <h2>Add a Burger</h2>
+    <form class="create-form">
+      <div class="form-group">
+        <label for="bur">Burger Name:</label>
+        <input type="text" id="bur" name="name" />
+      </div>
+
+      <div class="form-group">
+        <label for="eaten"></label><br />
+        <input type="radio" name="eaten" value="1" checked /> Fresh!<br />
+        <input type="radio" name="eaten" value="0" /> Eaten
+      </div>
+
+      <button type="submit">Add Burger</button>
+    </form>
+</body>
+</html>
