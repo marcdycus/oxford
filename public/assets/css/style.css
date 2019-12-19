@@ -1,0 +1,73 @@
+body {
+    background-image: url("../img/barBackground.jpg");
+    background-repeat: none;
+    background-size: cover;
+    font-family: 'Cairo', sans-serif;
+    font-size: 24px;
+    color: white;
+    margin: 60px;
+}
+
+h1, .container {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    text-align: center;
+    line-height: 80px;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 0px;
+}
+
+.delete-burger, .change-eaten {
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+ul {
+    margin: 0px;
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    padding: 0px;
+}
+
+#freshDiv, #eatenDiv {
+    width: 40%;
+    margin: 20px;
+}
+
+#freshDiv {
+    float: left;
+}
+#eatenDiv {
+    float: right;
+}
+
+#add {
+    clear: both;
+}
+
+#bur {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+}
+
+#addBurg {
+    font-size: 18px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+#addBurg:hover {
+    padding: 8px;
+    background-color: rgb(255, 255, 255);
+}

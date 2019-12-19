@@ -1,7 +1,7 @@
-$(function() {
+$(function () {
     $.ajax("/burgers", {
         type: "GET"
-    }).then(function(data) {
+    }).then(function (data) {
         var freshElem = $("#freshBurgers");
         var eatenElem = $("#eatenBurgers");
 
@@ -9,44 +9,29 @@ $(function() {
         var len = burgs.length;
 
         for (var i = 0; i < len; i++) {
-            var new_elem =
-            "<li>" + 
-            burgs[i].id + 
-            ". " + 
-            burgs[i].name + 
-
-            // this needs to happen only with "fresh burgers"
-            
-            "<button class='change-eaten' data-id='" +
-            burgs[i].id + 
-            "' data-newburg='" +
-            !burgs[i].eaten +
-            "'>"; 
+            var new_elem = "<li>";
 
             if (burgs[i].eaten) {
-                new_elem += "EAT";
-            } 
-            // else {
-            //     new_elem += "eaten";
-            // }
-            new_elem += "</button>";
-
-            new_elem += "<button class='delete-burger' data-id='" + 
-            burgs[i].id +
-            "'>X</button></li>";
-
-            if (burgs[i].eaten) {
+                new_elem += " <button class='change-eaten' data-id='" +
+                    burgs[i].id +
+                    "' data-newburg='" +
+                    !burgs[i].eaten +
+                    "'>" + burgs[i].name + "</button>";
                 freshElem.append(new_elem);
-            } 
-            else {
+            }
+
+            if (!burgs[i].eaten) {
+                new_elem += " <button class='delete-burger' data-id='" +
+                    burgs[i].id +
+                    "'>" + burgs[i].name + " &times;</button></li>";
                 eatenElem.append(new_elem);
             }
         }
     });
 
-    $(document).on("click", ".change-eaten", function(event) {
+    $(document).on("click", ".change-eaten", function (event) {
         var id = $(this).data("id");
-        var newBurgStat = $(this).data("newburg")===true;
+        var newBurgStat = $(this).data("newburg") === true;
 
         var newEatenState = {
             eaten: newBurgStat
@@ -55,9 +40,9 @@ $(function() {
         $.ajax("/burgers/" + id, {
             type: "PUT",
             data: JSON.stringify(newEatenState),
-            dataType:'json',
+            dataType: 'json',
             contentType: 'application/json'
-        }).then(function() {
+        }).then(function () {
             console.log("changed *eaten* to", newBurgStat);
 
             location.reload();
@@ -65,7 +50,7 @@ $(function() {
 
     });
 
-    $(".create-form").on("submit", function(event) {
+    $(".create-form").on("submit", function (event) {
         event.preventDefault();
 
         var newBurg = {
@@ -78,7 +63,7 @@ $(function() {
             data: JSON.stringify(newBurg),
             dataType: 'json',
             contentType: 'application/json'
-        }).then(function() {
+        }).then(function () {
             console.log("created new burger");
 
             location.reload();
@@ -87,12 +72,12 @@ $(function() {
         console.log(newBurg)
     });
 
-    $(document).on("click", ".delete-burger", function(event) {
+    $(document).on("click", ".delete-burger", function (event) {
         var id = $(this).data("id");
 
         $.ajax("/burgers/" + id, {
             type: "DELETE"
-        }).then(function() {
+        }).then(function () {
             console.log("deleted burger", id);
 
             location.reload();

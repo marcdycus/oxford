@@ -7,16 +7,24 @@
     <title>Nom!</title>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="/assets/js/burgers.js"></script>
+    <link rel="stylesheet" typ="text/css" href="./assets/css/style.css">
 </head>
 <body>
+
+
     <h1>Eat The Burger</h1>
+    <div class="container">
+    <div id="freshDiv">
     <h2>Fresh!</h2>
     <ul id="freshBurgers"></ul>
-
+      </div>
     
+    <div id="eatenDiv">
     <h2>Eaten</h2>
     <ul id="eatenBurgers"></ul>
+    </div>
 
+    <div id="add">
     <h2>Add a Burger</h2>
     <form class="create-form">
       <div class="form-group">
@@ -25,12 +33,13 @@
       </div>
 
       <div class="form-group">
-        <label for="eaten"></label><br />
         <input type="radio" name="eaten" value="1" checked /> Fresh!<br />
         <input type="radio" name="eaten" value="0" /> Eaten
       </div>
 
-      <button type="submit">Add Burger</button>
+      <button id="addBurg" type="submit">Add Burger</button>
     </form>
+  </div>
+    </div>
 </body>
 </html>
