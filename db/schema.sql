@@ -1,11 +1,14 @@
-DROP DATABASE IF EXISTS burgers_db;
-CREATE DATABASE burgers_db;
-USE burgers_db;
+DROP DATABASE IF EXISTS waitlist_db;
+CREATE DATABASE waitlist_db;
+USE waitlist_db;
 
-CREATE TABLE burgers (
+CREATE TABLE guests (
     id int not null AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
-    eaten BOOLEAN DEFAULT false,
+    guestCount int not null,
+    sat int not null,
+    waitTime timestamp DEFAULT CURRENT_TIMESTAMP,
+    satTime timestamp,
     primary key (id)
 )
 

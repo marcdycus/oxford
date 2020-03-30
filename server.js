@@ -9,7 +9,7 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-var routes = require("./controllers/burgers_controller.js");
+var routes = require("./controllers/guests_controller.js");
 
 app.use(routes);
 

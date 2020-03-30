@@ -59,13 +59,16 @@ var orm = {
     },
 
     update: function(table, objColVals, condition, cb) {
+
         var query = "UPDATE " + table;
 
         query += " SET ";
         query += objToSql(objColVals);
         query += " WHERE ";
         query += condition;
-    
+
+        // var query = 'update burgers set eaten = 0 where id = 64';
+
         console.log(query);
         connection.query(query, function(err, result) {
           if (err) {

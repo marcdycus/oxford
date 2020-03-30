@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Nom!</title>
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="/assets/js/burgers.js"></script>
-    <link rel="stylesheet" typ="text/css" href="./assets/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nom!</title>
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="/assets/js/guests.js"></script>
+  <link rel="stylesheet" typ="text/css" href="./assets/css/style.css">
 </head>
+
 <body>
 
 
-    <h1>Eat The Burger</h1>
-    <div class="container">
-    <div id="freshDiv">
-    <h2>Fresh!</h2>
-    <ul id="freshBurgers"></ul>
-      </div>
-    
-    <div id="eatenDiv">
-    <h2>Eaten</h2>
-    <ul id="eatenBurgers"></ul>
+  <h1>Eat The Burger</h1>
+  <div class="container">
+    <div id="waitingDiv">
+      <h2>Waitlist</h2>
+      <ul class="waitlist"></ul>
+    </div>
+
+    <div id="satDiv">
+      <h2>Sat</h2>
+      <ul class="satguests"></ul>
     </div>
 
     <div id="add">
-    <h2>Add a Burger</h2>
-    <form class="create-form">
-      <div class="form-group">
-        <label for="bur">Burger Name:</label>
-        <input type="text" id="bur" name="name" />
-      </div>
+      <h2>Add a Guest</h2>
+      <form class="create-form">
+        <div class="form-group">
+          <label for="gues">Guest Name:</label>
+          <input type="text" id="gues" name="name" />
+          <label for="guestCount">Count:</label>
+          <input type="number" id="count" name="guestCount"
+          min="1" max="600">
+        </div>
 
-      <div class="form-group">
-        <input type="radio" name="eaten" value="1" checked /> Fresh!<br />
-        <input type="radio" name="eaten" value="0" /> Eaten
-      </div>
+        <div class="form-group">
+          <input type="radio" name="sat" value="0" checked /> waiting<br />
+          <input type="radio" name="sat" value="1" /> sat
+        </div>
 
-      <button id="addBurg" type="submit">Add Burger</button>
-    </form>
-  </div>
+        <button id="addGuest" type="submit">Add Guest</button>
+      </form>
     </div>
+  </div>
 </body>
+
 </html>

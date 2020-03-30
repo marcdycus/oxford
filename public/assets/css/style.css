@@ -36,6 +36,7 @@ ul {
 
 li {
     padding: 0px;
+    width: 50px;
 }
 
 #freshDiv, #eatenDiv {
