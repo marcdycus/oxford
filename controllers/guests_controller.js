@@ -29,7 +29,8 @@ router.put("/guests/:id", function(req, res) {
     console.log("condition: ", condition);
     // console.log(res.json({ id: req.params.id }));
     guest.update({
-        sat: req.body.sat
+        sat: req.body.sat,
+        satTime: req.body.satTime
     }, condition, function(result) {
         // if (result.changedRow == 0) {
         //     return res.status(404).end();

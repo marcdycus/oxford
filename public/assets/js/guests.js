@@ -28,11 +28,12 @@ $(function () {
 
     $(document).on("click", ".change-sat", function (event) {
         var newID = $(this).attr("data-guestId");
-
+        var newTime = moment().format('hh:mm:ss');
         var newSatState = {
-            sat: true
+            sat: true,
+            satTime: newTime
         };
-
+        console.log(newTime);
         $.ajax("/guests/" + newID, {
             type: "PUT",
             data: JSON.stringify(newSatState),
@@ -59,7 +60,8 @@ $(function () {
                 name: $("#gues").val().trim(),
                 sat: $("[name=sat]:checked").val(),
                 guestCount: $("#count").val(),
-                arriveTime: newTime
+                arriveTime: newTime,
+                satTime: newTime
             };
 
             $.ajax("/guests", {
