@@ -9,12 +9,28 @@
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="/assets/js/guests.js"></script>
   <link rel="stylesheet" typ="text/css" href="./assets/css/style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+  
+  
+  <script type="text/javascript"> 
+  // shows live time
+    function display_c(){
+    var refresh=1000; // Refresh rate in milli seconds
+    setTimeout('display_ct()',refresh)
+    }
+    
+    function display_ct() {
+      var x = moment().format('lll');
+      document.getElementById('ct').innerHTML = x;
+      display_c();
+    }
+    </script>
 </head>
 
-<body>
+<body onload=display_ct();>
 
+  <span id='ct' ></span>
 
-  <h1>Eat The Burger</h1>
   <div class="container">
     <div id="waitingDiv">
       <h2>Waitlist</h2>
@@ -28,13 +44,15 @@
 
     <div id="add">
       <h2>Add a Guest</h2>
+      <span id='ct' ></span>
+
       <form class="create-form">
         <div class="form-group">
           <label for="gues">Guest Name:</label>
           <input type="text" id="gues" name="name" />
           <label for="guestCount">Count:</label>
           <input type="number" id="count" name="guestCount"
-          min="1" max="600">
+          min="1" max="1000">
         </div>
 
         <div class="form-group">

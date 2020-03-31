@@ -7,8 +7,8 @@ CREATE TABLE guests (
     name VARCHAR(100) NOT NULL,
     guestCount int not null,
     sat int not null,
-    waitTime timestamp DEFAULT CURRENT_TIMESTAMP,
-    satTime timestamp,
+    arriveTime time,
+    satTime time,
     primary key (id)
-)
+);
 

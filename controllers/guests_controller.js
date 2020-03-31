@@ -15,9 +15,9 @@ router.get("/guests", function(req, res) {
 
 router.post("/guests", function(req, res) {
     guest.create([
-        'name', 'sat', 'guestCount'
+        'name', 'sat', 'guestCount', 'arriveTime', 'satTime'
     ], [
-        req.body.name, req.body.sat, req.body.guestCount
+        req.body.name, req.body.sat, req.body.guestCount, req.body.arriveTime, req.body.satTime
     ], function(result) {
         res.json({ id: result.insertId });
     });
