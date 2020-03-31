@@ -1,5 +1,5 @@
 $(function () {
-    
+    console.log(display_ct())
     $.ajax("/guests", {
         type: "GET"
     }).then(function (data) {
@@ -7,20 +7,20 @@ $(function () {
         var satElem = $(".satguests");
         var gues = data.guests;
         var len = gues.length;
-        console.log(gues);
-        console.log(moment().format());
+        // console.log(gues);
+        // console.log(moment().format());
         
 
         for (var i = 0; i < len; i++) {
             var new_elem = "<li>";
 
             if (!gues[i].sat) {
-                new_elem += " <button class='change-sat' data-guestId='" + gues[i].id + "' data-newState=" + gues[i].sat + "><p>" + gues[i].name + "</p><p>" + gues[i].arriveTime + "</p></button></li>";
+                new_elem += "<button class='change-sat reservation' data-guestId='" + gues[i].id + "' data-newState=" + gues[i].sat + "><p>" + gues[i].name + "</p><p class='guestCount'>" + gues[i].guestCount + "</p><p class='arriveTime'>" + gues[i].arriveTime + "</p></button></li>";
                 waitingElem.append(new_elem);
             }
 
             if (gues[i].sat) {
-                new_elem += " <button class='delete-guest' data-guestId='" + gues[i].id + "' data-newState=" + gues[i].sat + "><p>" + gues[i].name + "</p><p>" + gues[i].satTime + "</p> &times;</button></li>";
+                new_elem += " <button class='delete-guest reservation' data-guestId='" + gues[i].id + "' data-newState=" + gues[i].sat + "> <p class='delete'>&times;</p><p>" + gues[i].name + "</p><p class='guestCount'>" + gues[i].guestCount + "</p><p class='arriveTime'>" + gues[i].satTime + "</p></button></li>";
                 satElem.append(new_elem);
             }
         }
