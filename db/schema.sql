@@ -11,4 +11,3 @@ CREATE TABLE guests (
     satTime time,
     primary key (id)
 );
-
