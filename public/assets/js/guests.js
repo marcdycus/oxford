@@ -1,8 +1,4 @@
 $(function () {
-    // console.log(display_ct())
-
-    // onload=display_ct();
-
     $.ajax("/guests", {
         type: "GET"
     }).then(function (data) {
