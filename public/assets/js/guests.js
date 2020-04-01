@@ -1,7 +1,7 @@
 $(function() {
     $.ajax("/guests", {
         type: "GET"
-    }).then(function (data) {
+    }).then(function(data) {
         var waitingElem = $(".waitlist");
         var satElem = $(".satguests");
         var gues = data.guests;
