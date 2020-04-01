@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     $.ajax("/guests", {
         type: "GET"
     }).then(function (data) {
