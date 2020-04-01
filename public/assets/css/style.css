@@ -59,13 +59,6 @@ p {
     border-radius: 4px;
 }
 
-#waitingDiv {
-    /* float: left; */
-}
-
-#satDiv {
-    /* float: right; */
-}
 
 .delete {
     float: right;
