@@ -1,7 +1,7 @@
 body {
-    background-image: url("../img/restaurantBackground.jpeg");
+    /* background-image: url("../img/restaurantBackground.jpeg"); */
     font-family: 'Cairo', sans-serif;
-    background-size: cover;
+    /* background-size: cover; */
     /* background-repeat: no-repeat; */
     font-size: 24px;
     color: white;
