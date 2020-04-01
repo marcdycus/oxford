@@ -1,5 +1,8 @@
 $(function () {
-    console.log(display_ct())
+    // console.log(display_ct())
+
+    // onload=display_ct();
+
     $.ajax("/guests", {
         type: "GET"
     }).then(function (data) {
@@ -33,7 +36,7 @@ $(function () {
             sat: true,
             satTime: newTime
         };
-        console.log(newTime);
+        // console.log(newTime);
         $.ajax("/guests/" + newID, {
             type: "PUT",
             data: JSON.stringify(newSatState),
