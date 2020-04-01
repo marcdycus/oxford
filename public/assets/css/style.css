@@ -1,6 +1,8 @@
 body {
-    background-image: url("../img/barBackground.jpg");
+    background-image: url("../img/restaurantBackground.jpeg");
     font-family: 'Cairo', sans-serif;
+    background-size: cover;
+    /* background-repeat: no-repeat; */
     font-size: 24px;
     color: white;
     margin: 0px;
