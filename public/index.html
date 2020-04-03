@@ -31,17 +31,23 @@
 
   <div id="content">
   <span id='ct' ></span>
-  <div id="add">
+
+  <button id="addButton">+</button>
+
+  <div id="addGuestModal" class="modal">
+
+  <div id="addContent" class="modalContent">
+    <button id="closeModal">X</button>
     <h2>Add a Guest</h2>
     <span id='ct' ></span>
 
     <form class="create-form">
       <div class="form-group">
-        <label for="gues">Guest Name:</label>
-        <input type="text" id="gues" name="name" />
-        <label for="guestCount">Count:</label>
+        <!-- <label for="gues">Guest Name:</label> -->
+        <input type="text" id="gues" name="name" placeholder="Guest Name"/>
+        <!-- <label for="guestCount">Count:</label> -->
         <input type="number" id="count" name="guestCount"
-        min="1" max="1000">
+        min="1" max="1000" placeholder="Guest Count">
       </div>
 
       <div class="form-group">
@@ -52,7 +58,7 @@
       <button id="addGuest" type="submit">Add Guest</button>
     </form>
   </div>
-
+  </div>
   <div class="container">
     <div id="waitingDiv">
       <!-- <h2>Waitlist</h2> -->

@@ -25,6 +25,14 @@ $(function() {
         }
     });
 
+    $("#addButton").on('click', function (event) {
+        $('#addGuestModal').show();
+    });
+
+    $("#closeModal").on("click", function (event) {
+        $("#addGuestModal").hide();
+    })
+
     $(document).on("click", ".change-sat", function (event) {
         var newID = $(this).attr("data-guestId");
         var newTime = moment().format('hh:mm:ss');
